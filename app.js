@@ -1,8 +1,10 @@
 document.getElementById("startGameButton").addEventListener("click", function(){
     const x = document.getElementById("dimensionX").value;
     const y = document.getElementById("dimensionY").value;
-    cards = GenerateCards(x,y);
-    
+    const cards = GenerateCards(x,y);
+
+console.log(x,y,cards);
+
     Render(cards, x, y);
 })
 

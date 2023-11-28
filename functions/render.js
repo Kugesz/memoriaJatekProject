@@ -17,23 +17,22 @@ function Render(cards, x, y){
 
     for(let i = 0; i < x; i++){
         for(let j = 0; j < y; j++){
-            s += `  <div class="flip-card">
-            <div class="flip-card-inner">
-            <div class="flip-card-front"></div>
-            <div class="flip-card-back">
-            `+ cards[i*4 + j]+`
-            </div>
-            </div>
-        </div>`
+            s += `<div class="flip-card" id="${i * x + j}" style="grid-column: ${i+1}; grid-row: ${j+1}">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"></div>
+                    <div class="flip-card-back" id="content${i * x + j}">
+                    </div>
+                </div>
+            </div>`;
         }
     }
 
     cardsContainer.innerHTML = s;
 
     cardsHTML = document.getElementsByClassName("flip-card");
-    Array.from(cardsHTML).forEach(function(element) {
-        element.addEventListener('click', function() {
-            element.classList.toggle('active');
+    Array.from(cardsHTML).forEach(function(cardElement) {
+        cardElement.addEventListener('click', function() {
+            Active(cards, cardElement);
         });
     });
 }

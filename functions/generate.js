@@ -17,5 +17,7 @@ function GenerateCards(x, y) {
     pickableCards = pickableCards.concat(pickableCards);
     generatedCards = pickableCards.sort((a, b) => 0.5 - Math.random());
 
+
+    if(generatedCards.length != cardsNumber){alert("valami szar ocsi!!!");}
     return generatedCards;
 }

@@ -41,4 +41,8 @@
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
