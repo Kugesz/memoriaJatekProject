@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Memória játék</title>
 </head>
 <body>
-  <section id="dimensionX">
+  <select id="dimensionX">
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
@@ -20,8 +21,8 @@
     <option value="11">11</option>
     <option value="12">12</option>
     <option value="13">13</option>
-  </section>
-  <section id="dimensionY">
+  </select>
+  <select id="dimensionY">
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
@@ -34,8 +35,18 @@
     <option value="11">11</option>
     <option value="12">12</option>
     <option value="13">13</option>
-  </section>
+  </select>
   <button id="startGameButton">Játék kezdése</button>
+  <!-- <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front"></div>
+      <div class="flip-card-back">
+      </div>
+    </div>
+  </div> -->
+  <div id="asd"></div>
 </body>
+<script src="functions/generate.js"></script>
+<script src="functions/render.js"></script>
 <script src="app.js"></script>
 </html>
