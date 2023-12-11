@@ -1,12 +1,16 @@
-document.getElementById("startGameButton").addEventListener("click", function(){
-    const x = document.getElementById("dimensionX").value;
-    const y = document.getElementById("dimensionY").value;
-    const cards = GenerateCards(x,y);
+document
+    .getElementById("startGameButton")
+    .addEventListener("click", function () {
+        ResetClock();
 
-console.log(x,y,cards);
+        setInterval(UpdateClock, 1000);
+        const dim = document.getElementById("dimensions").value;
+        const cards = GenerateCards(dim);
 
-    Render(cards, x, y);
-})
+        Render(cards, dim);
+        
+        document.getElementById("gameLobby").style.display = 'none';
+    });
 
 // Test
 function hasThreeOccurrences(arr) {

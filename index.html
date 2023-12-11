@@ -4,51 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Memória játék</title>
 </head>
 <body>
-  <select id="dimensionX">
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-  </select>
-  <select id="dimensionY">
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-  </select>
-  <button id="startGameButton">Játék kezdése</button>
-  <!-- <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front"></div>
-      <div class="flip-card-back">
-      </div>
+  <div id="gameLobby">
+    <select id="dimensions">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <button id="startGameButton">Játék kezdése</button>
+  </div>
+  <div id="game" style="display: none;">
+    <nav class="d-flex justify-content-between align-items-center">
+      <svg onclick=BackToLobby() xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+      </svg>
+      <p id="timer">0:00</p>
+    </nav>
+    <div id="cardsContainer"></div>
+    <div id="winMenu" class="modal">
+      <h2>Nyertél!</h2>
+      <button onclick="CloseWinMenu()" id="newGameButton">Új játék</button>
     </div>
-  </div> -->
-  <div id="asd"></div>
+    <div id="overlay" class="overlay"></div>
+  </div>
 </body>
 <script src="functions/generate.js"></script>
 <script src="functions/render.js"></script>
 <script src="functions/activate.js"></script>
 <script src="functions/sleep.js"></script>
+<script src="functions/clock.js"></script>
+<script src="functions/backToLobby.js"></script>
+<script src="functions/win.js"></script>
+<script src="functions/close.js"></script>
 <script src="app.js"></script>
 </html>
